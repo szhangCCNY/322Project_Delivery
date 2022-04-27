@@ -3,7 +3,6 @@ package com.example.order_delivery;
 import android.app.Application;
 
 import com.parse.Parse;
-import android.app.Application;
 import com.parse.ParseObject;
 
 public class Order_Delivery extends Application {
@@ -11,11 +10,16 @@ public class Order_Delivery extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ParseObject.registerSubclass(sz_item_cust.class);
+        ParseObject.registerSubclass(CheckoutList.class);
+        ParseObject.registerSubclass(sz_customer.class);
+        ParseObject.registerSubclass(User.class);
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("ppwkyUgSD69n0LPhUB22zKo5BAzCCPfidmCGvbEr")
-                .clientKey("QvrQuB08ZNrgbYW7TIRFBHMZ9IyTzzz7Atc5JgB6")
+                .applicationId("1igYSiq7EIkI0M0fQrjwoU1qdbcqtwR2NhwNXiuY")
+                .clientKey("yjjrxIe00LlVbo7DnkYFOIYoKDkwqnrja3YynidM")
                 .server("https://parseapi.back4app.com")
                 .build()
         );
+
     }
 }
